@@ -21,7 +21,8 @@ minerAlias="$3"-"$host"
 #public settings
 currentPath=`pwd`
 path=/q
-package=qli-Client-1.8.5-Linux-x64-hiveos.tar.gz
+#package=qli-Client-1.8.5-Linux-x64-hiveos.tar.gz
+package=qli-Client-1.8.3-Linux-x64.tar.gz
 executableName=qli-Client
 serviceScript=qli-Service.sh
 servicePath=/etc/systemd/system
