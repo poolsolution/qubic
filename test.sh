@@ -17,4 +17,4 @@ token="eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjUwYjNhMzliLTY4ODUtNDFkMi05
 host=`hostname`
 minerAlias="$3"-"$host"
 
-echo minerAlias
+echo $minerAlias
