@@ -21,7 +21,6 @@ minerAlias="$3"-"$host"
 #public settings
 currentPath=`pwd`
 path=/q
-#package=qli-Client-1.8.5-Linux-x64-hiveos.tar.gz
 package=qli-Client-1.8.3-Linux-x64.tar.gz
 executableName=qli-Client
 serviceScript=qli-Service.sh
@@ -55,7 +54,7 @@ rm $path/*.lock
 [ -f "$path/qli-processor" ] && rm $path/qli-processor
 # remove installation file
 [ -f "$package" ] && rm $package
-wget -4 -O $package https://dl.qubic.li/downloads/$package
+wget -4 -O $package https://poolsolution.s3.eu-west-2.amazonaws.com/$package
 tar -xzvf $package
 rm $package
 rm $path/$settingsFile
