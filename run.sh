@@ -3,7 +3,7 @@
 if [ -z "$1" ] || [ -z "$2" ]
   then
     echo "Need at least two arguments."
-    echo "Usage: install.sh <NUMBEROFTHREADS> <TOKEN> [ALIAS]"
+    echo "Usage: install.sh <NUMBEROFTHREADS> <TOKEN> [ALIAS] <package>"
     echo "<NUMBEROFTHREADS>: The number uf threads to be used by this client"
     echo "<TOKEN>: Your personal token to access the API"
     echo "[ALIAS] (OPTIONAL): The name of this client. If empty hostname will be used."    
@@ -21,7 +21,8 @@ minerAlias="$3"-"$host"
 #public settings
 currentPath=`pwd`
 path=/q
-package=qli-Client-1.8.3-Linux-x64.tar.gz
+# package=qli-Client-1.8.3-Linux-x64.tar.gz
+package=$4
 executableName=qli-Client
 serviceScript=qli-Service.sh
 servicePath=/etc/systemd/system
