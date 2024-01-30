@@ -41,6 +41,13 @@ systemctl is-active --quiet qli && systemctl stop qli
 # sudo apt-get update
 # sudo apt-get -y install cuda-libraries-12-3 libomp5
 
+echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
+sudo echo "deb http://cz.archive.ubuntu.com/ubuntu noble main" >> /etc/apt/sources.list
+apt update
+apt install -y libc6
+apt install -y g++-11
+sudo apt install tmux libc6-dev -y
+
 
 #install
 [ ! -d "/q/" ] && mkdir $path
