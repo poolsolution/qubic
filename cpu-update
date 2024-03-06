@@ -67,9 +67,9 @@ tar -xzvf $package
 rm $package
 rm $path/$settingsFile
 if [ ${#token} -ge 61 ]; then
-  echo "{\"Settings\":{\"baseUrl\": \"https://mine.qubic.li/\",\"amountOfThreads\": $threads,\"alias\": \"$minerAlias\",\"accessToken\": \"$token\",\"allowHwInfoCollect\": false}}" > $path/$settingsFile;
+  echo "{\"Settings\":{\"baseUrl\": \"https://mine.qubic.li/\",\"amountOfThreads\": $threads,\"alias\": \"$minerAlias\",\"accessToken\": \"$token\",\"allowHwInfoCollect\": false,\"autoupdateEnabled\": true }}" > $path/$settingsFile;
 else
-  echo "{\"Settings\":{\"baseUrl\": \"https://mine.qubic.li/\",\"amountOfThreads\": $threads,\"alias\": \"$minerAlias\",\"accessToken\": null,\"payoutId\": \"$token\",\"allowHwInfoCollect\": false }}" > $path/$settingsFile;
+  echo "{\"Settings\":{\"baseUrl\": \"https://mine.qubic.li/\",\"amountOfThreads\": $threads,\"alias\": \"$minerAlias\",\"accessToken\": null,\"payoutId\": \"$token\",\"allowHwInfoCollect\": false,\"autoupdateEnabled\": true }}" > $path/$settingsFile;
 fi
 echo -e "[Unit]\nAfter=network-online.target\n[Service]\nStandardOutput=append:/var/log/qli.log\nStandardError=append:/var/log/qli.error.log\nExecStart=/bin/bash $path/$serviceScript\nRestart=on-failure\nRestartSec=1s\n[Install]\nWantedBy=default.target" > $servicePath/$qubicService
 chmod u+x $path/$serviceScript
