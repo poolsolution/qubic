@@ -34,12 +34,15 @@ systemctl is-active --quiet qli && systemctl stop qli
 
 #install dependencies
 echo "deb http://cz.archive.ubuntu.com/ubuntu jammy main" >> /etc/apt/sources.list
-apt-get update && apt-get install software-properties-common libc6 g++-11 -y
+
+sudo NEEDRESTART_MODE=a apt-get update && apt-get install software-properties-common libc6 g++-11 -y
+
 # add-apt-repository -y ppa:ubuntu-toolchain-r/test && apt update && apt install g++ -y
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.1-1_all.deb
-sudo dpkg -i cuda-keyring_1.1-1_all.deb
-sudo apt-get update
-sudo apt-get -y install cuda-libraries-12-3 libomp5
+
+sudo NEEDRESTART_MODE=a dpkg -i cuda-keyring_1.1-1_all.deb
+sudo NEEDRESTART_MODE=a apt-get update -y
+sudo NEEDRESTART_MODE=a apt-get -y install cuda-libraries-12-3 libomp5
 
 
 #install
